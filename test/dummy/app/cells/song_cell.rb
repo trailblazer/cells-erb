@@ -5,6 +5,10 @@ class SongCell < Cell::ViewModel
     render
   end
 
+  def with_content_tag_and_content_tag
+    render
+  end
+
   def with_content_tag
     render
   end

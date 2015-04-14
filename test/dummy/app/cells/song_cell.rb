@@ -1,5 +1,7 @@
 class SongCell < Cell::ViewModel
-  def edit
+  self.view_paths = ["test/dummy/app/cells"]
+
+  def with_form_tag_and_content_tag
     render
   end
 

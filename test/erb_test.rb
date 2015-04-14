@@ -1,16 +1,21 @@
 require 'test_helper'
 
-
 class ErbTest < MiniTest::Spec
   let (:controller) { ApplicationController.new.tap { |ctl| ctl.send("request=", ActionDispatch::Request.new({})) } }
-  let (:cellule) { SongCell.new(controller) }
+  let (:song_cell) { SongCell.new(controller) }
 
 
   # URL helpers work in cell instance.
-  it { cellule.songs_path.must_equal "/songs" }
+  it { song_cell.songs_path.must_equal "/songs" }
 
-  # content_tag with ERB.
-  it { cellule.with_content_tag.must_equal "<span>Title:\n<div>Still Knee Deep\n</div>\n</span>\n" }
+  # content_tag {}
+  it { song_cell.(:with_content_tag).must_equal "<span>Title:\n<div>Still Knee Deep\n</div>\n</span>\n" }
+
+  # form_tag { content_tag { } }
+  it { song_cell.(:with_form_tag_and_content_tag).must_equal_xml_structure "<form><div><input/></div><label/><input/><ul><li/></ul></form>" }
+
+
+
   #
   # # form_tag with block in block work.
   # it { cellule.edit.must_equal "<form><div><input/></div><label/><input/><ul><li/></ul></form>" }

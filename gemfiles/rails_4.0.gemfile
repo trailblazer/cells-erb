@@ -5,8 +5,8 @@ source "https://rubygems.org"
 gem "cells", :github => "apotonick/cells"
 gem "appraisal"
 gem "minitest-reporters"
-gem "railties", :github => "rails/rails", :branch => "4-0-stable"
-gem "activemodel", :github => "rails/rails", :branch => "4-0-stable"
+gem "railties", "~> 4.0.0"
+gem "activemodel"
 gem "minitest", "4.7.5"
 
 platforms :mri_20, :mri_21 do

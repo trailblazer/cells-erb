@@ -5,7 +5,7 @@ source "https://rubygems.org"
 gem "cells", :github => "apotonick/cells"
 gem "appraisal"
 gem "minitest-reporters"
-gem "railties", :github => "rails/rails", :branch => "3-2-stable"
+gem "railties", "~> 3.2"
 gem "tzinfo"
 gem "minitest", "4.7.5"
 

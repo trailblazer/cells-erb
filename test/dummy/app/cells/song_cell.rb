@@ -1,6 +1,8 @@
 class SongCell < Cell::ViewModel
   self.view_paths = ["test/dummy/app/cells"]
 
+  include ActionView::Helpers::FormHelper
+
   def with_form_tag_and_content_tag
     render
   end

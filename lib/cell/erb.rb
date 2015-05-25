@@ -33,3 +33,6 @@ module Cell::Erb
     end
   end
 end
+
+Tilt.register Cell::Erb::Template, "erb"
+# Tilt.prefer Cell::Erb::Template

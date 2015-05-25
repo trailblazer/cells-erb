@@ -1,0 +1,4 @@
+gemfile:
+  - gemfiles/rails4.2-tilt-1.4.gemfile
+  - gemfiles/rails4.2-tilt-2.0.gemfile
+  - gemfiles/rails3.2-tilt-1.4.gemfile

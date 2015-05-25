@@ -9,10 +9,15 @@ class ErbTest < MiniTest::Spec
   it { song_cell.songs_path.must_equal "/songs" }
 
   # content_tag { }
-  it { song_cell.(:with_content_tag).must_equal "Beachparty\n" }
+  it { song_cell.(:with_content_tag).must_equal "<div>Beachparty</div>" }
 
   # content_tag { content_tag { } }
-  it { song_cell.(:with_content_tag_and_content_tag).must_equal "<span>Title:\n<div>Still Knee Deep\n</div>\n</span>\n" }
+  it do song_cell.(:with_content_tag_and_content_tag).must_equal %{<span>
+    Title:
+    <div>
+        Still Knee Deep
+</div></span>}
+  end
 
   # form_tag { content_tag { } }
   it( "xxx") do

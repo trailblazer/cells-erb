@@ -1,7 +1,7 @@
 require "erbse"
 
 module Cell::Erb
-  # Erbse-Tilt binding. This should be bundled with tilt. # 1.4.
+  # Erbse-Tilt binding. This should be bundled with tilt. # 1.4. OR should be tilt-erbse.
   class Template < Tilt::Template
     def self.default_output_variable
       "_erbout"

@@ -4,18 +4,14 @@ require 'erubis/engine/eruby'
 
 # The original ERB implementation in Ruby doesn't support blocks like
 #   <%= form_for do %>
-# which is fixed with this monkey-patch.
-#
-# TODO: don't monkey-patch, use this in cells/tilt, only!
+# which is fixed with this patch.
 
 module Cell
   class Erubis < ::Erubis::Eruby
-    # include ::Erubis::Converter # happens automatically.
-
     def add_preamble(src)
       puts "add_preamble called§§§§§§§§§§"
       @newline_pending = 0
-      src << "@output_buffer = output_buffer || ActionView::OutputBuffer.new;"
+      src << "@output_buffer = output_buffer;" # DISCUSS: i removed the output_buffer || ActionView::OB.new rubbish here.
     end
 
     def add_text(src, text)

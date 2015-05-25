@@ -1,3 +1,5 @@
+require "pp"
+
 begin
   require 'byebug'
 rescue LoadError

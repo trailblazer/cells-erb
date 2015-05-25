@@ -15,7 +15,20 @@ class ErbTest < MiniTest::Spec
   it { song_cell.(:with_content_tag_and_content_tag).must_equal "<span>Title:\n<div>Still Knee Deep\n</div>\n</span>\n" }
 
   # form_tag { content_tag { } }
-  it( "xxx") { song_cell.(:with_form_tag_and_content_tag).must_equal_xml_structure "<form><div><input/></div><label/><input/><ul><li/></ul></form>" }
+  it( "xxx") do
+
+    song_cell.(:with_form_tag_and_content_tag).must_equal %{Word.
+
+<form action=\"/erubis/is/horribly/outdated\" accept-charset=\"UTF-8\" method=\"post\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" />
+  <a href=\"/rails/sucks\">
+    hallo
+</a>
+  <ul>
+   Hallo
+</ul>
+</form>}
+end
+    # song_cell.(:with_form_tag_and_content_tag).must_equal_xml_structure "<form><div><input/></div><label/><input/><ul><li/></ul></form>" }
 
 
 

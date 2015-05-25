@@ -21,10 +21,12 @@ class ErbTest < MiniTest::Spec
 
   # form_tag { content_tag { } }
   it( "xxx") do
+    form_tag = "<form action=\"/erubis/is/horribly/outdated\" accept-charset=\"UTF-8\" method=\"post\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" />"
+    form_tag = "<form accept-charset=\"UTF-8\" action=\"/erubis/is/horribly/outdated\" method=\"post\"><div style=\"margin:0;padding:0;display:inline\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" /></div>" if ActionPack::VERSION::MAJOR == 3
 
     song_cell.(:with_form_tag_and_content_tag).must_equal %{Word.
 
-<form action=\"/erubis/is/horribly/outdated\" accept-charset=\"UTF-8\" method=\"post\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" />
+#{form_tag}
   <a href=\"/rails/sucks\">
     hallo
 </a>

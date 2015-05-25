@@ -2,18 +2,17 @@
 
 source "https://rubygems.org"
 
-# gem "cells", :github => "apotonick/cells"
-gem "cells", path: "../../cells"
+gem "cells", :github => "apotonick/cells"
+#gem "cells", path: "../../cells"
 gem "appraisal"
-gem "minitest-reporters"
 gem "railties", "~> 4.2.0"
 gem "activemodel"
 gem "minitest", "~> 5.2"
+gem "minitest-reporters"
+gem "tilt", "~> 2.0"
 
 platforms :mri_20, :mri_21 do
   gem "pry-byebug"
 end
 
 gemspec :path => "../"
-
-# gem "erbse", path: "../../erbse"

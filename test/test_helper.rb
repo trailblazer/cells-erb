@@ -10,5 +10,5 @@ require 'minitest/autorun'
 
 ENV['RAILS_ENV'] = 'test'
 
-require 'cell/erb'
+require "cells"
 require_relative 'dummy/config/environment'

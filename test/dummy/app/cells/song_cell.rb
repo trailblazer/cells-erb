@@ -2,6 +2,7 @@ class SongCell < Cell::ViewModel
   self.view_paths = ["test/dummy/app/cells"]
 
   include ActionView::Helpers::FormHelper
+  include Cell::Erb
 
   def with_form_tag_and_content_tag
     render
@@ -35,8 +36,15 @@ class SongCell < Cell::ViewModel
     render
   end
 
-  private
+private
   def cap
     "yay, #{with_output_buffer { yield } }"
+  end
+
+  def current_page
+    capture do
+      #[link_to("1", "/1"), link_to("2", "/2")].join("+") # this breaks, too!
+      "<b>No current page!<b>"
+    end
   end
 end

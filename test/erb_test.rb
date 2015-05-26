@@ -20,7 +20,7 @@ class ErbTest < MiniTest::Spec
   end
 
   # form_tag { content_tag { } }
-  it( "xxx") do
+  it do
     form_tag = "<form action=\"/erubis/is/horribly/outdated\" accept-charset=\"UTF-8\" method=\"post\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" />"
     form_tag = "<form accept-charset=\"UTF-8\" action=\"/erubis/is/horribly/outdated\" method=\"post\"><div style=\"margin:0;padding:0;display:inline\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" /></div>" if ActionPack::VERSION::MAJOR == 3
 
@@ -33,33 +33,23 @@ class ErbTest < MiniTest::Spec
   <ul>
    Hallo
 </ul>
-</form>}
-end
-    # song_cell.(:with_form_tag_and_content_tag).must_equal_xml_structure "<form><div><input/></div><label/><input/><ul><li/></ul></form>" }
+</form>
+
+
+Weiter!
+
+  Bonjour!
+  <a href=\"/coffee\">Coffee?</a>
+  <b>Yes please!</b>
+  <script>oui!</script>
 
 
 
-  #
-  # # form_tag with block in block work.
-  # it { cellule.edit.must_equal "<form><div><input/></div><label/><input/><ul><li/></ul></form>" }
-  #
-  # # form_tag, no block
-  # it { cellule.with_form_tag.must_equal "<form><div><input/></div><span/></form>" }
-  #
-  # # form_for with block in ERB.
-  # it { cellule.with_form_for_block.must_equal "<form><div><input/></div><input/></form>" }
-  #
-  # # when using yield, haml breaks it (but doesn't escape HTML)
-  # it { cellule.with_block.must_equal "Nice!\nyay, <b>yeah</b>\n" }
-  #
-  # # capture
-  # it { cellule.with_capture.must_equal "Nice!\n<b>Great!</b>\n" }
-  #
-  # # there's again escaping happening where it shouldn't be in link_to and rails <= 3.2.
-  # if Cell.rails_version >= Gem::Version.new('4.0')
-  #   # link_to with block and img_tag
-  #   it { cellule.with_link_to.must_equal "<a href=\"/songs\"><img alt=\"All\" src=\"/images/all.png\" />\n</a>\n" }
-  # end
+<a href=\"/1\">1</a>+<a href=\"/2\">2</a>
+
+<b>No current page!<b>
+<form url=\"/rails/escapes/too/much\" method=\"post\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" />&lt;input type=&quot;button&quot;/&gt;</form>}
+  end
 end
 
 # start with content_tag and block (or capture) and find out how sinatra handles that. goal is NOT to use those hacks in haml's action_view_extensions.

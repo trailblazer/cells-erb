@@ -29,7 +29,7 @@ class SongCell < Cell::ViewModel
 end
 ```
 
-If that doesn't work, [read the docs](http://trailblazerb.org/cells/gems/cells4.html#escaping).
+If that doesn't work, [read the docs](http://trailblazerb.org/gems/cells/cells4.html#html-escaping).
 
 ## Dependencies
 

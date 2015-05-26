@@ -13,6 +13,15 @@ module Cell
       end
     end
 
+    def form_tag_with_body(html_options, content)
+      "#{form_tag_html(html_options)}" << content.to_s << "</form>"
+    end
+
+    def form_tag_html(html_options)
+      extra_tags = extra_tags_for_form(html_options)
+      "#{tag(:form, html_options, true) + extra_tags}"
+    end
+
 
     # Erbse-Tilt binding. This should be bundled with tilt. # 1.4. OR should be tilt-erbse.
     class Template < Tilt::Template

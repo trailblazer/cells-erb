@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-gem "cells", :github => "apotonick/cells"
+# gem "cells", :github => "apotonick/cells"
 #gem "cells", path: "../../cells"
 gem "appraisal"
 gem "railties", "~> 4.2.0"

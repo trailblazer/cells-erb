@@ -19,7 +19,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency "cells", "~> 4.0.0.beta"
-  spec.add_runtime_dependency "tilt", ">= 1.4", "< 3"
   spec.add_runtime_dependency "erbse", ">= 0.0.2"
 
   spec.add_development_dependency "bundler"

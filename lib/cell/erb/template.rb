@@ -50,4 +50,4 @@ module Cell
 end
 
 Tilt.register Cell::Erb::Template, "erb"
-# Tilt.prefer Cell::Erb::Template
+Tilt.prefer Cell::Erb::Template

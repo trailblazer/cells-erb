@@ -13,6 +13,16 @@ module Cell
       end
     end
 
+    def with_output_buffer(buf = nil) #:nodoc:
+      buf = ActionView::OutputBuffer.new
+
+      self.output_buffer, old_buffer = buf, @output_buffer
+      yield
+      @output_buffer
+    ensure
+      self.output_buffer = old_buffer
+    end
+
     def form_tag_with_body(html_options, content)
       "#{form_tag_html(html_options)}" << content.to_s << "</form>"
     end

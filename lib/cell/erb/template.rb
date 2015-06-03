@@ -14,11 +14,11 @@ module Cell
     end
 
     def with_output_buffer(buf=ViewModel::OutputBuffer.new)
-      self.output_buffer, old_buffer = buf, @output_buffer
+      @output_buffer, old_buffer = buf, @output_buffer
       yield
       @output_buffer
     ensure
-      self.output_buffer = old_buffer
+      @output_buffer = old_buffer
     end
 
     # Below:

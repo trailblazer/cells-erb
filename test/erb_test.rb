@@ -8,7 +8,8 @@ class ErbTest < MiniTest::Spec
   it { song_cell.(:render_in_render).must_equal "<b>Questions: Yes!</b>" }
 
   # URL helpers work in cell instance.
-  it { song_cell.songs_path.must_equal "/songs" }
+  # -- this is actually covered well enough in cells, and is unrelated to ERB.
+  # it { song_cell.songs_path.must_equal "/songs" }
 
   # content_tag { }
   it { song_cell.(:with_content_tag).must_equal "<div>Beachparty</div>" }

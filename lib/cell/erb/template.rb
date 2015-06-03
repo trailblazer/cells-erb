@@ -3,6 +3,15 @@ require "erbse"
 module Cell
   # Erb contains helpers that are messed up in Rails and do escaping.
   module Erb
+    # This is to prevent multiple renders to share the same output_buffer.
+    # I am still trying to find a way to avoid output buffers.
+    def render_template(*)
+      old_output_buffer = @output_buffer
+      super
+    ensure
+      @output_buffer = old_output_buffer
+    end
+
     # this is capture copied from AV:::CaptureHelper without doing escaping.
     def capture(*args)
       value = nil

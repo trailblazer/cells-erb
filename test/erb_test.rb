@@ -5,7 +5,7 @@ class ErbTest < MiniTest::Spec
   let (:song_cell) { SongCell.new(controller) }
 
   # render in render
-  it { song_cell.(:render_in_render).must_equal "<b>Questions: Yes!<b>Questions: Yes!</b>" }
+  it { song_cell.(:render_in_render).must_equal "<b>Questions: Yes!</b>" }
 
   # URL helpers work in cell instance.
   it { song_cell.songs_path.must_equal "/songs" }

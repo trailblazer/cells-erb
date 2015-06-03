@@ -4,7 +4,6 @@ module Cell
   # Erb contains helpers that are messed up in Rails and do escaping.
   module Erb
     # this is capture copied from AV:::CaptureHelper without doing escaping.
-    # TODO: re-implement capture and return content instead of the OB rubbish.
     def capture(*args)
       value = nil
       buffer = with_output_buffer { value = yield(*args) }
@@ -13,12 +12,12 @@ module Cell
       value # this applies for "Beachparty" string-only statements.
     end
 
-    def with_output_buffer(buf=ViewModel::OutputBuffer.new)
-      @output_buffer, old_buffer = buf, @output_buffer
+    def with_output_buffer(block_buffer=ViewModel::OutputBuffer.new)
+      @output_buffer, old_buffer = block_buffer, @output_buffer
       yield
-      @output_buffer
-    ensure
       @output_buffer = old_buffer
+
+      block_buffer
     end
 
     # Below:

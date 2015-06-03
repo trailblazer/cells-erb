@@ -8,19 +8,24 @@ module Cell
     def capture(*args)
       value = nil
       buffer = with_output_buffer { value = yield(*args) }
-      if string = buffer.presence || value and string.is_a?(String)
-        string
-      end
+
+      return buffer.to_s if buffer.size > 0
+      value # this applies for "Beachparty" string-only statements.
     end
 
-    def with_output_buffer(buf = nil) #:nodoc:
-      buf = ActionView::OutputBuffer.new
-
+    def with_output_buffer(buf=ViewModel::OutputBuffer.new)
       self.output_buffer, old_buffer = buf, @output_buffer
       yield
       @output_buffer
     ensure
       self.output_buffer = old_buffer
+    end
+
+    # Below:
+    # Rails specific helper fixes. I hate that. I can't tell you how much I hate those helpers,
+    # and their blind escaping for every possible string within the application.
+    def content_tag(name, content_or_options_with_block=nil, options=nil, escape=false, &block)
+      super
     end
 
     def form_tag_with_body(html_options, content)
@@ -53,6 +58,7 @@ module Cell
       end
 
       def precompiled_template(locals)
+        puts "@@@@@ #{@template.().inspect}"
         @template.call
       end
     end

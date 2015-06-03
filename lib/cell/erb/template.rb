@@ -66,7 +66,7 @@ module Cell
       end
 
       def precompiled_template(locals)
-        puts "@@@@@ #{@template.().inspect}"
+        # puts "@@@@@ #{@template.().inspect}"
         @template.call
       end
     end

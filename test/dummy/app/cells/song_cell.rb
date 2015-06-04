@@ -4,6 +4,9 @@ class SongCell < Cell::ViewModel
   include ActionView::Helpers::FormHelper
   include Cell::Erb
 
+  def protect_against_forgery?
+  end
+
   def with_form_tag_and_content_tag
     render
   end

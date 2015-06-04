@@ -12,6 +12,10 @@ module Cell
       @output_buffer = old_output_buffer
     end
 
+    def template_for(prefixes, view, options)
+      super(prefixes, view, template_class: ::Cell::Erb::Template, escape_html: false, escape_attrs: false)
+    end
+
     # this is capture copied from AV:::CaptureHelper without doing escaping.
     def capture(*args)
       value = nil
@@ -46,6 +50,8 @@ module Cell
     end
 
 
+
+
     # Erbse-Tilt binding. This should be bundled with tilt. # 1.4. OR should be tilt-erbse.
     class Template < Tilt::Template
       def self.engine_initialized?
@@ -66,12 +72,9 @@ module Cell
       end
 
       def precompiled_template(locals)
-        # puts "@@@@@ #{@template.().inspect}"
+         puts "@@@@@ #{@template.().inspect}"
         @template.call
       end
     end
   end
 end
-
-Tilt.register Cell::Erb::Template, "erb"
-Tilt.prefer Cell::Erb::Template

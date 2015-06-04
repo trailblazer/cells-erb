@@ -66,13 +66,11 @@ module Cell
       #
       #   Tilt.new("#{base}/#{prefix}/#{view}", engine_class: Erbse::Eruby)
       def prepare
-        engine_class = options.delete(:engine_class)
-        # engine_class = ::Erubis::EscapedEruby if options.delete(:escape_html)
-        @template = (engine_class || ::Erbse::Template).new(data, options)
+        @template = ::Erbse::Template.new(data, options)
       end
 
       def precompiled_template(locals)
-         puts "@@@@@ #{@template.().inspect}"
+         # puts "@@@@@ #{@template.().inspect}"
         @template.call
       end
     end

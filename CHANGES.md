@@ -1,3 +1,7 @@
+# 0.0.5
+
+* Fix `#concat`.
+
 # 0.0.4
 
 * Fixed output_buffer issues and more.

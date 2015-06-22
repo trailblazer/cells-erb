@@ -54,6 +54,10 @@ module Cell
       "#{tag(:form, html_options, true) + extra_tags}"
     end
 
+    def concat(string)
+      @output_buffer << string
+    end
+
 
     # Erbse-Tilt binding. This should be bundled with tilt. # 1.4. OR should be tilt-erbse.
     class Template < Tilt::Template

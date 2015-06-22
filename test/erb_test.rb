@@ -63,7 +63,8 @@ Weiter!
 <b>No current page!<b>
 #{form_with_body_tag}
 
-#{form_for_tag}}
+#{form_for_tag}
+<div><p>Concat!</p>Whoo</div>}
   end
 end
 

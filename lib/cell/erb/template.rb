@@ -43,6 +43,12 @@ module Cell
       super
     end
 
+    # We do statically set escape=true since attributes are double-quoted strings, so we have
+    # to escape (default in Rails).
+    def tag_options(options, escape = true)
+      super(options, true)
+    end
+
     def form_tag_with_body(html_options, content)
       "#{form_tag_html(html_options)}" << content.to_s << "</form>"
     end

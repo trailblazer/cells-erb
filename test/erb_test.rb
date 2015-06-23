@@ -43,7 +43,7 @@ class ErbTest < MiniTest::Spec
   <a href=\"/rails/sucks\">
     hallo
 </a>
-  <ul>
+  <ul data-x="{&quot;a&quot;:&quot;1&quot;}">
    Hallo
 </ul>
 </form>

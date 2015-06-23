@@ -15,8 +15,6 @@ module Cell
     def template_options_for(options)
       {
         template_class: ::Cell::Erb::Template,
-        escape_html:    false,
-        escape_attrs:   false,
         suffix:         "erb"
       }
     end

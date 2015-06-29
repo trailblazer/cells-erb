@@ -42,6 +42,9 @@ class ErbTest < MiniTest::Spec
 #{form_tag}
   <a href=\"/rails/sucks\">
     hallo
+    <div class="row">
+      Cool
+    </div>
 </a>
   <ul data-x="{&quot;a&quot;:&quot;1&quot;}">
    Hallo

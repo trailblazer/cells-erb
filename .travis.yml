@@ -1,8 +1,12 @@
 language: ruby
 rvm:
-  - 2.1
+  - 2.0
+  - 2.3
 
 gemfile:
   - gemfiles/rails_4.2-tilt-1.4.gemfile
   - gemfiles/rails_4.2-tilt-2.0.gemfile
   # - gemfiles/rails_3.2-tilt-1.4.gemfile
+
+before_install:
+  - gem update bundler

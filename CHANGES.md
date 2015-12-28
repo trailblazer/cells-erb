@@ -1,3 +1,7 @@
+# 0.0.7
+
+* Allow Cells 4.x.
+
 # 0.0.6
 
 * Changed `#tag_options`. We now do escape strings as attributes are double-quoted strings already. It makes sense, thanks Rails.

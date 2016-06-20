@@ -1,3 +1,7 @@
+# 0.0.8
+
+* Introduce `cell/erb.rb` for consistency with all other template gems.
+
 # 0.0.7
 
 * Allow Cells 4.x.

@@ -7,4 +7,4 @@ ENV['RAILS_ENV'] = 'test'
 require "cells"
 require_relative 'dummy/config/environment'
 
-require "cells-erb"
+require "cell/erb"

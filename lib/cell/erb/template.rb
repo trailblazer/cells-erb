@@ -22,7 +22,7 @@ module Cell
     # this is capture copied from AV:::CaptureHelper without doing escaping.
     def capture(*args)
       value = nil
-      buffer = with_output_buffer { value = yield(*args) }
+      buffer = with_output_buffer { value = yield(*args).html_safe }
 
       return buffer.to_s if buffer.size > 0
       value # this applies for "Beachparty" string-only statements.

@@ -15,12 +15,21 @@ class ErbTest < MiniTest::Spec
   it { song_cell.(:with_content_tag).must_equal "<div>Beachparty</div>" }
 
   # content_tag { content_tag { } }
-  it do song_cell.(:with_content_tag_and_content_tag).must_equal %{<span>
-    Title:
-    <div>
-        Still Knee Deep
-</div></span>}
+  it do song_cell.(:with_content_tag_and_content_tag).must_equal %{<span>    Title:
+    <div>        Still Knee Deep
+    </div></span>}
   end
+
+  # describe "benchmarking" do
+  #   it do
+  #     require "benchmark"
+  #     t = Benchmark.measure do
+  #       10000.times { |i| song_cell.(:with_content_tag_and_content_tag) }
+  #     end
+
+  #     puts "@@@@@ #{t}"
+  #   end
+  # end
 
   # form_tag { content_tag { } }
   it do
@@ -68,6 +77,18 @@ Weiter!
 
 #{form_for_tag}
 <div><p>Concat!</p>Whoo</div>}
+  end
+
+  it do
+    # puts ErbseCell.new.()
+    ErbseCell.new.().must_equal %{bla
+<h1>Welcome!</h1>
+
+ErbseCell  invoke!
+  !unless invoke, #not!
+line
+  captured
+}
   end
 end
 

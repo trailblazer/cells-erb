@@ -1,3 +1,7 @@
+# 0.0.9
+
+* Limit to erbse-0.0.x.
+
 # 0.0.8
 
 * Introduce `cell/erb.rb` for consistency with all other template gems.

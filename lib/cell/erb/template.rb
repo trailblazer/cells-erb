@@ -44,21 +44,19 @@ module Cell
     # Erbse-Tilt binding. This should be bundled with tilt. # 1.4. OR should be tilt-erbse.
     class Template < Tilt::Template
       def self.engine_initialized?
-        defined? ::Erbse::Template
+        defined? ::Erbse::Engine
       end
 
       def initialize_engine
         require_template_library "erbse"
       end
 
-      #   Tilt.new("#{base}/#{prefix}/#{view}", engine_class: Erbse::Eruby)
       def prepare
-        @template = ::Erbse::Template.new(data, options)
+        @template = ::Erbse::Engine.new # we also have #options here.
       end
 
       def precompiled_template(locals)
-         # puts "@@@@@ #{@template.().inspect}"
-        @template.call
+        @template.call(data)
       end
     end
   end

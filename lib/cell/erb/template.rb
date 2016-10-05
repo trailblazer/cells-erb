@@ -10,7 +10,6 @@ module Cell
       }
     end
 
-    # this is capture copied from AV:::CaptureHelper without doing escaping.
     def capture(*args)
       yield(*args)
     end
@@ -49,7 +48,7 @@ module Cell
       end
 
       def initialize_engine
-        require_template_library 'erbse'
+        require_template_library "erbse"
       end
 
       #   Tilt.new("#{base}/#{prefix}/#{view}", engine_class: Erbse::Eruby)

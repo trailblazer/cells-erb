@@ -1,3 +1,7 @@
+# 0.1.0
+
+* The `concat` helper is not supported, anymore. Concatenate to a local string instead.
+
 # 0.0.9
 
 * Limit to erbse-0.0.x.

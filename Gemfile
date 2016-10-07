@@ -5,6 +5,6 @@ gemspec
 
 gem "railties", "~> 4.2.0"
 gem "activemodel"
-gem "minitest", "~> 5.2"
-gem "tilt", "~> 2.0"
-gem "cells", path: "../cells"
+# gem "cells", path: "../cells"
+ gem "erbse", path: "../erbse"
+gem "minitest-line"

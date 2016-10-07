@@ -14,9 +14,9 @@ Word.
 
 <% end %>
 
-<%- answer = "<script>oui!</script>" %>
+<% answer = "<script>oui!</script>" %>
 
-<%- content = capture do %>
+<%@ content = capture do %>
   Bonjour!
   <%= link_to "Coffee?", "/coffee" %>
   <b>Yes please!</b>
@@ -27,8 +27,8 @@ Weiter!
 
 <%= content %>
 
-<%- breadcrumbs = capture do %>
-  <%- [link_to("1", "/1"), link_to("2", "/2")].join("+") %>
+<%@ breadcrumbs = capture do %>
+  <%= [link_to("1", "/1"), link_to("2", "/2")].join("+") %>
 <% end %>
 
 <%= breadcrumbs %>

@@ -37,7 +37,8 @@ module Cell
     end
 
     def concat(string)
-      @output_buffer << string
+      raise "[Cells-ERB] The #concat helper uses global state and is not supported anymore.
+Please change your code to simple `+` String concatenation or tell the gem authors to remove #concat usage."
     end
 
 
@@ -56,6 +57,7 @@ module Cell
       end
 
       def precompiled_template(locals)
+        # puts @template.call(data)
         @template.call(data)
       end
     end

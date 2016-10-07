@@ -57,8 +57,10 @@ private
 
   def concatting
     content_tag :div do
-      concat content_tag :p, "Concat!"
-      concat "Whoo"
+      # concat content_tag :p, "Concat!"
+      # concat "Whoo"
+      content_tag(:p, "Concat!") +
+      "Whoo"
     end
   end
 end

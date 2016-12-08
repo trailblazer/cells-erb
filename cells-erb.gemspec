@@ -1,7 +1,6 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-
 require 'cell/erb/version'
 
 Gem::Specification.new do |spec|

@@ -20,23 +20,6 @@ And that's all you need to do.
 
 You should read its docs to learn what you can and can't do with Erbse.
 
-## Concat
-
-The global `#concat` helper is not supported in Cells-ERB. Erbse uses local variables as output buffers, hence this global state helper does not work. Please use explicit string concatenation instead.
-
-Instead of
-
-```ruby
-concat content_tag(:p, "Good")
-concat "Morning!"
-```
-
-you can do
-
-```ruby
-content_tag(:p, "Good") + "Morning!"
-```
-
 ## Block Yielding
 
 With Erbse, you can actually [capture blocks](https://github.com/apotonick/erbse#block-yielding), pass them to other cells and `yield` them. This will simply return whatever the block returns, no weird buffer magic will be happening in the background.
@@ -71,10 +54,8 @@ Cells doesn't escape except when you tell it to do. However, you may run into pr
 As a first step, try this and see if it helps.
 
 ```ruby
-class SongCell < Cell::ViewModel
+class SongCell < Cell::ViewModelERB
   include ActionView::Helpers::FormHelper
-  include Cell::Erb # include Erb _after_ AV helpers.
-
   # ..
 end
 ```

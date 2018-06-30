@@ -1,2 +1,1 @@
-require "cells"
-require "cell/erb/template"
+require "cell/erb"

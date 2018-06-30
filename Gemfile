@@ -3,8 +3,6 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in cells-erb.gemspec
 gemspec
 
-gem "activemodel"
-gem "railties"
 gem "minitest-line"
 
 case ENV["GEMS_SOURCE"]

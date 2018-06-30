@@ -1,3 +1,7 @@
+# 0.5.0
+* Drop all rails hacks , add 'cells-rails' for all the rails witchcraft.
+* Introduce ViewModelErb
+
 # 0.1.0
 
 * The `concat` helper is not supported, anymore. Concatenate to a local string instead.

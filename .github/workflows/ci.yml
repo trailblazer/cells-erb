@@ -1,3 +1,6 @@
+## This file is managed by Terraform.
+## Do not modify this file directly, as it may be overwritten.
+## Please open an issue instead.
 name: CI
 on: [push, pull_request]
 jobs:

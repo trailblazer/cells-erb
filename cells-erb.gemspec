@@ -13,6 +13,12 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/trailblazer/cells-erb'
   spec.license       = 'MIT'
 
+  spec.metadata['bug_tracker_uri'] = "#{spec.homepage}/issues"
+  spec.metadata['changelog_uri'] = "#{spec.homepage}/blob/HEAD/CHANGES.md"
+  spec.metadata['documentation_uri'] = "https://www.rubydoc.info/gems/cells-erb/#{spec.version}"
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = spec.homepage
+
   spec.files         = `git ls-files -z`.split("\x0")
   spec.test_files    = spec.files.grep(%r{^(test)/})
   spec.require_paths = ['lib']
